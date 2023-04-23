@@ -5,13 +5,13 @@
 import plugin from "../../lib/plugins/plugin.js";
 import fetch from 'node-fetch';
 
-export class example extends plugin {
+export class hhsh extends plugin {
     constructor() {
         super({
             /** 功能名称 */
             name: "能不能好好说话",
             /** 功能描述 */
-            dsc: "简单开发示例",
+            dsc: "就不能好好打字吗",
             /** https://oicqjs.github.io/oicq/#events */
             event: "message",
             /** 优先级，数字越小等级越高 */
@@ -52,7 +52,7 @@ export class example extends plugin {
                 text: keyword,
             }),});
         const json = await response.json();
-        var replyMsg = `${keyword}的解释：`;
+        let replyMsg = `${keyword}的解释：`;
         if ("trans" in json[0]) {
             for (let index = 0; index < json[0].trans.length; index++) {
                 if (index == json[0].trans.length - 1) {
